@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/06 19:17:35 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/07 09:10:15 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ int main(int argc, char **argv)
 	}
 	checkfordigit(argv, push_swap);
 	checkfordubs(argv, push_swap);
-	printf("What is the error?: %i\n", push_swap->error);
-	
+	checkformaxandmin(argv, push_swap);
+	if (push_swap > 0)
+		printf("Error\n");
+
 	return (0);
-	
 }
 
 void 	init_push_swap(t_push_swap	*push_swap)
@@ -119,30 +120,35 @@ void	checkfordubs(char **argv, t_push_swap	*push_swap)
 			if (atoi(argv[c]) == atoi(argv[j]))
 			{
 			push_swap->error = 2;
-				return ;
+				return;
 			}
 			else
 				j++;
 		}
 		c++;
-		
-		//if (strcmp(argv[c], argv[c + 1]))
-		
 	}
 }
 
-// void	checkformaxandmin(char	**argv, t_push_swap	*push_swap)
-// {
-// 	int c;
+void	checkformaxandmin(char	**argv, t_push_swap	*push_swap)
+{
+	int c;
 
-// 	c = 1;
-// 	while (argv[c])
-// 	{
-// 		if(atol(argv[c] > INT_MAX || argv[c] < INT_MIN))
-			
-// 	}
-// }
+	c = 1;
+	while (argv[c])
+	{
+		if(atol(argv[c] > INT_MAX || argv[c] < INT_MIN))
+		{
+			push_swap->error = 3;
+			return;
+		}
+		c++;
+	}
+}
 
+int	*llist_filling(char	**argv, t_push_swap	*push_swap)
+{
+	
+}
 //Objectives
 
 
