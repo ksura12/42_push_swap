@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/06 19:02:25 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 17:39:05 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,104 @@
 # define PUSH_SWAP_H
 
 # define INT_MAX 2147483647
-# define INT_MIN 2147483648
+# define INT_MIN -2147483648
 
-/**
-*@brief assembles the whole line of a file to return with gnl
-*
-*@param rest remainding characters
-*@return Pointer to location of teh line to return
-*/
-int	*push_swap(int *stack_a);
-
+#include "../libft/header/libftprintf.h"
 
 typedef struct s_push_swap
 {
 	int	error;
+	int	list_length;
+	t_list	*stack_a;
+	t_list	*stack_b;
 } t_push_swap;
 
+/**
+*@brief inot existing function
+*
+*@param 
+*@return 
+*/
+int	*push_swap(int *stack_a);
+
+void	checkfordigit(char **argv, t_push_swap	*push_swap);
+void	checkfordubs(char **argv, t_push_swap	*push_swap);
+void	checkformaxandmin(char	**argv, t_push_swap	*push_swap);
+
+
+/**
+*@brief pushes first elememnt of stack a to stack b
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	pb(t_push_swap	*push_swap);
+
+/**
+*@brief pushes first elememnt of stack b to stack a
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	pa(t_push_swap	*push_swap);
+
+/**
+*@brief swaps first two elememnts of stack a
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	sa(t_push_swap *push_swap);
+
+/**
+*@brief swaps first two elememnts of stack b
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	sb(t_push_swap *push_swap);
+
+/**
+*@brief swaps first two elememnts of stack a & b
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	ss(t_push_swap *push_swap);
+
+/**
+*@brief shifting first element of a to last position in stack a
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	ra(t_push_swap	*push_swap);
+
+/**
+*@brief shifting first element of b to last position in stack b
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	rb(t_push_swap	*push_swap);
+
+/**
+*@brief shifting first element of a&b to last position in each stack
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	rr(t_push_swap	*push_swap);
+
+/**
+*@brief shifting last element of a to first position in stack a
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	rra(t_push_swap	*push_swap);
+
+void	rrb(t_push_swap	*push_swap);
+
+void	rrr(t_push_swap	*push_swap);
 #endif
