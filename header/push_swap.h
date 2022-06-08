@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 18:40:49 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 19:03:11 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,14 @@ typedef struct s_push_swap
 */
 int		*push_swap(int *stack_a);
 
-void	checkfordigit(char **argv, t_push_swap	*push_swap);
-void	checkfordubs(char **argv, t_push_swap	*push_swap);
-void	checkformaxandmin(char	**argv, t_push_swap	*push_swap);
+/**
+*@brief checks the arguments for non digits, max/mins and duplicates
+*
+*@param argv: argumentlist
+*@param push_swap: struct which includes error_messages
+*@return -
+*/
+void	input_errors(char **argv, t_push_swap	*push_swap);
 
 /**
 *@brief pushes first elememnt of stack a to stack b

@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:19:08 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 18:20:36 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 19:25:55 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	rr(t_push_swap	*push_swap)
 
 	head_a = push_swap->stack_a;
 	head_b = push_swap->stack_b;
-	if ((!head_a || !head_a->next) && (!head_b || !head_b->next))
+	if (!head_a || !head_a->next || !head_b || !head_b->next)
 		return ;
 	else
 	{

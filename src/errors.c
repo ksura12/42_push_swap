@@ -6,15 +6,25 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:26:43 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 17:43:19 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 19:06:13 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../header/push_swap.h"
 
 static void	core_checkfordigit(char *argv, t_push_swap	*push_swap);
+static void	checkformaxandmin(char	**argv, t_push_swap	*push_swap);
+static void	checkfordigit(char **argv, t_push_swap	*push_swap);
+static void	checkfordubs(char **argv, t_push_swap	*push_swap);
 
-void	checkfordigit(char **argv, t_push_swap	*push_swap)
+void	input_errors(char **argv, t_push_swap	*push_swap)
+{
+	checkfordigit(argv, push_swap);
+	checkfordubs(argv, push_swap);
+	checkformaxandmin(argv, push_swap);
+}
+
+static void	checkfordigit(char **argv, t_push_swap	*push_swap)
 {
 	int	c;
 
@@ -59,7 +69,7 @@ static void	core_checkfordigit(char *argv, t_push_swap	*push_swap)
 	}
 }
 
-void	checkfordubs(char **argv, t_push_swap	*push_swap)
+static void	checkfordubs(char **argv, t_push_swap	*push_swap)
 {
 	int	c;
 	int	j;
@@ -84,7 +94,7 @@ void	checkfordubs(char **argv, t_push_swap	*push_swap)
 	}
 }
 
-void	checkformaxandmin(char	**argv, t_push_swap	*push_swap)
+static void	checkformaxandmin(char	**argv, t_push_swap	*push_swap)
 {
 	int	c;
 

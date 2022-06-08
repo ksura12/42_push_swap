@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 18:31:32 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 19:41:55 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,28 +31,29 @@ int	main(int argc, char **argv)
 		if (!push_swap)
 			exit(1);
 		init_push_swap(push_swap);
-		checkfordigit(argv, push_swap);
-		checkfordubs(argv, push_swap);
-		checkformaxandmin(argv, push_swap);
+		input_errors(argv, push_swap);
+		
 		llist_filling(argv, push_swap);
-		printing_stacks(push_swap);
-		sa(push_swap);
-		printing_stacks(push_swap);
-		rra(push_swap);
-		printing_stacks(push_swap);
-		pb(push_swap);
-		printing_stacks(push_swap);
-		pb(push_swap);
-		pb(push_swap);
-		printing_stacks(push_swap);
-		ss(push_swap);
-		printing_stacks(push_swap);
-		rr(push_swap);
 		printing_stacks(push_swap);
 		rrr(push_swap);
 		printing_stacks(push_swap);
-		pa(push_swap);
-		printing_stacks(push_swap);
+		// sa(push_swap);
+		// printing_stacks(push_swap);
+		// rra(push_swap);
+		// printing_stacks(push_swap);
+		// pb(push_swap);
+		// printing_stacks(push_swap);
+		// pb(push_swap);
+		// pb(push_swap);
+		// printing_stacks(push_swap);
+		// ss(push_swap);
+		// printing_stacks(push_swap);
+		// rr(push_swap);
+		// printing_stacks(push_swap);
+		// rrr(push_swap);
+		// printing_stacks(push_swap);
+		// pa(push_swap);
+		// printing_stacks(push_swap);
 		freeing_llist(push_swap);
 		free(push_swap);
 		return (0);
