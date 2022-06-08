@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 17:39:05 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 18:40:49 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
-#include "../libft/header/libftprintf.h"
+# include "../libft/header/libftprintf.h"
 
 typedef struct s_push_swap
 {
-	int	error;
-	int	list_length;
+	int		error;
+	int		list_length;
 	t_list	*stack_a;
 	t_list	*stack_b;
-} t_push_swap;
+}	t_push_swap;
 
 /**
 *@brief inot existing function
@@ -32,12 +32,11 @@ typedef struct s_push_swap
 *@param 
 *@return 
 */
-int	*push_swap(int *stack_a);
+int		*push_swap(int *stack_a);
 
 void	checkfordigit(char **argv, t_push_swap	*push_swap);
 void	checkfordubs(char **argv, t_push_swap	*push_swap);
 void	checkformaxandmin(char	**argv, t_push_swap	*push_swap);
-
 
 /**
 *@brief pushes first elememnt of stack a to stack b
