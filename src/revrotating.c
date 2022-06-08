@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:55:16 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 16:07:03 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 18:24:32 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	rra(t_push_swap	*push_swap)
 
 	last = push_swap->stack_a;
 	seclast = NULL;
-
 	while (last->next != NULL)
 	{
 		seclast = last;
@@ -31,7 +30,6 @@ void	rra(t_push_swap	*push_swap)
 		last->next = push_swap->stack_a;
 		push_swap->stack_a = last;
 	}
-	
 }
 
 void	rrb(t_push_swap	*push_swap)
@@ -41,7 +39,6 @@ void	rrb(t_push_swap	*push_swap)
 
 	last = push_swap->stack_b;
 	seclast = NULL;
-
 	while (last->next != NULL)
 	{
 		seclast = last;
@@ -53,7 +50,6 @@ void	rrb(t_push_swap	*push_swap)
 		last->next = push_swap->stack_b;
 		push_swap->stack_b = last;
 	}
-	
 }
 
 void	rrr(t_push_swap	*push_swap)
@@ -63,17 +59,15 @@ void	rrr(t_push_swap	*push_swap)
 
 	last_a = ft_lstlast(push_swap->stack_a);
 	last_b = ft_lstlast(push_swap->stack_b);
-	if(last_a && last_b)
+	if (last_a && last_b)
 	{
-		if(push_swap->stack_a != last_a)
+		if (push_swap->stack_a != last_a)
 		{
-			if(push_swap->stack_b != last_b)
+			if (push_swap->stack_b != last_b)
 			{
 				rra(push_swap);
 				rrb(push_swap);
 			}
 		}
 	}
-	// rra(push_swap);
-	// rrb(push_swap);
 }
