@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 19:41:55 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/09 15:33:27 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	main(int argc, char **argv)
 	{
 		push_swap = (t_push_swap *)malloc(sizeof(t_push_swap));
 		if (!push_swap)
-			exit(1);
+			exit(EXIT_FAILURE);
 		init_push_swap(push_swap);
 		input_errors(argv, push_swap);
 		
 		llist_filling(argv, push_swap);
 		printing_stacks(push_swap);
-		rrr(push_swap);
-		printing_stacks(push_swap);
+		// rrr(push_swap);
+		// printing_stacks(push_swap);
 		// sa(push_swap);
 		// printing_stacks(push_swap);
 		// rra(push_swap);
@@ -54,6 +54,8 @@ int	main(int argc, char **argv)
 		// printing_stacks(push_swap);
 		// pa(push_swap);
 		// printing_stacks(push_swap);
+		sorting(push_swap);
+		printing_stacks(push_swap);
 		freeing_llist(push_swap);
 		free(push_swap);
 		return (0);

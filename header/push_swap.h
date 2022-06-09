@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 19:03:11 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/08 19:49:36 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,6 @@ void	rra(t_push_swap	*push_swap);
 void	rrb(t_push_swap	*push_swap);
 
 void	rrr(t_push_swap	*push_swap);
+
+void	sorting(t_push_swap	*push_swap);
 #endif

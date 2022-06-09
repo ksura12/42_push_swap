@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:27:05 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 18:22:13 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/09 17:20:16 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sa(t_push_swap *push_swap)
 	temp = push_swap->stack_a;
 	if (temp != NULL && temp->next != NULL)
 		swap(&temp->content, &temp->next->content);
+	ft_printf("sa\n");
 }
 
 void	sb(t_push_swap *push_swap)
@@ -30,6 +31,7 @@ void	sb(t_push_swap *push_swap)
 	temp = push_swap->stack_b;
 	if (temp != NULL && temp->next != NULL)
 		swap(&temp->content, &temp->next->content);
+	ft_printf("sb\n");
 }
 
 void	ss(t_push_swap *push_swap)

@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:55:16 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 19:41:23 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/09 17:19:35 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	rra(t_push_swap	*push_swap)
 		last->next = push_swap->stack_a;
 		push_swap->stack_a = last;
 	}
+	ft_printf("rra\n");
 }
 
 void	rrb(t_push_swap	*push_swap)
@@ -54,6 +55,7 @@ void	rrb(t_push_swap	*push_swap)
 		last->next = push_swap->stack_b;
 		push_swap->stack_b = last;
 	}
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_push_swap	*push_swap)
@@ -77,4 +79,5 @@ void	rrr(t_push_swap	*push_swap)
 			}
 		}
 	}
+	ft_printf("rrr\n");
 }
