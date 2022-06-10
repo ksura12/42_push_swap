@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 19:49:36 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/10 12:49:17 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef struct s_push_swap
 	t_list	*stack_a;
 	t_list	*stack_b;
 }	t_push_swap;
+
+typedef struct s_element
+{
+	int		value;
+	int		position;
+}	t_element;
 
 /**
 *@brief inot existing function
@@ -120,4 +126,10 @@ void	rrb(t_push_swap	*push_swap);
 void	rrr(t_push_swap	*push_swap);
 
 void	sorting(t_push_swap	*push_swap);
+
+void	three_args_a(t_push_swap	*push_swap);
+
+void	pb_lowest(t_push_swap	*push_swap);
+
+void	five_args(t_push_swap	*push_swap);
 #endif
