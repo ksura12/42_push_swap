@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:40:30 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/10 12:49:05 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/10 15:35:53 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	five_args(t_push_swap	*push_swap)
 	pb_lowest(push_swap);
 	pb_lowest(push_swap);
 	three_args_a(push_swap);
-	while (push_swap->stack_b)
-		pa(push_swap);
+	pa(push_swap);
+	pa(push_swap);
 }
 
 void	pb_lowest(t_push_swap	*push_swap)

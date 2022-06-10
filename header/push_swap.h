@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/10 12:49:17 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/10 16:51:41 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,4 +132,30 @@ void	three_args_a(t_push_swap	*push_swap);
 void	pb_lowest(t_push_swap	*push_swap);
 
 void	five_args(t_push_swap	*push_swap);
+void	pivot_to_b(t_push_swap	*push_swap);
+void	printing_stacks(t_push_swap	*push_swap);
+
+/**
+*@brief sorting if more than 5 Arguments
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	sortbig(t_push_swap	*push_swap);
+
+/**
+*@brief sorting exactly 2 Arguments
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void		two_args_a(t_push_swap	*push_swap);
+
+/**
+*@brief sorting exactly 4 Arguments
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void		four_args(t_push_swap	*push_swap);
 #endif

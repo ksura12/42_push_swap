@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 19:10:48 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/10 12:52:03 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/10 15:29:30 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ void	sorting(t_push_swap	*push_swap)
 		four_args(push_swap);
 	else if (size == 5)
 		five_args(push_swap);
+	else
+	{
+		sortbig(push_swap);
+	}
+		
 }
 
 void	two_args_a(t_push_swap	*push_swap)
@@ -125,28 +130,4 @@ static int	right_order_a(t_push_swap	*push_swap)
 	return (ret);
 }
 
-// static int	right_order_b(t_push_swap	*push_swap)
-// {
-// 	t_list	*temp;
-// 	t_list	*temp2;
 
-// 	temp = push_swap->stack_b;
-// 	temp2 = push_swap->stack_b->next;
-// 	while (temp && temp2 && temp->content > temp2->content)
-// 	{
-// 		temp = temp2;
-// 		temp2 = temp2->next;
-// 	}
-// 	if (temp == ft_lstlast(push_swap->stack_b))
-// 		return (1);
-// 	else
-// 		return (0);
-// }
-
-// void	quicksort(t_push_swap	*push_swap)
-// {
-// 	t_list	*pivot;
-
-// 	pivot = ft_lstlast(push_swap->stack_a);
-// 	while ()
-// }

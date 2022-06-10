@@ -6,7 +6,7 @@
 #    By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 09:24:12 by ksura             #+#    #+#              #
-#    Updated: 2022/06/10 12:42:49 by ksura            ###   ########.fr        #
+#    Updated: 2022/06/10 14:34:37 by ksura            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ FT_LNK	= ./libft/libftprintf.a
 
 
 SRC := main.c errors.c swapping.c pushing.c rotating.c revrotating.c\
-	sorting_ruling.c sortfive.c
+	sorting_ruling.c sortfive.c sortbig.c
 
 OBJS = ${SRC:.c=.o}
 OBJECTS_PREF := $(addprefix $(OBJDIR), $(OBJS))
