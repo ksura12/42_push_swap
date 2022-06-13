@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/10 16:48:34 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/13 09:20:04 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	init_push_swap(t_push_swap	*push_swap)
 	push_swap->error = 0;
 	push_swap->stack_a = NULL;
 	push_swap->stack_b = NULL;
-	// push_swap->stack_a->chunk = 0;
+	//push_swap->stack_a->chunk = 0;
 }
 
 void	freeing_llist(t_push_swap	*push_swap)

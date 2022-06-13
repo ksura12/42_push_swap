@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 14:21:46 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/10 17:50:01 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/13 10:23:44 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,22 +70,31 @@ void sortchunk(t_push_swap	*push_swap)
 	chunksize = 0;
 	chunkpos = 0;
 	temp = push_swap->stack_b;
+	if (push_swap->stack_b == NULL)
+		return ;
 	biggest = temp;
+	
 	ft_printf("vor while%i\n", chunkpos);
-	while(push_swap->stack_b->chunk < 1 && push_swap->stack_b)
+	printing_stacks(push_swap);
+	while(temp->next)
 	{
-		
+		write(1, "testtext\n", 10);
 		chunksize++;
-		if(push_swap->stack_b->content >= biggest->content)
+		if(temp->content >= biggest->content)
 		{
 			biggest = push_swap->stack_b;
 			chunkpos = chunksize;
+			ft_printf("biggest:%i\n", biggest->content);
 		}
-		push_swap->stack_b = push_swap->stack_b->next;
+		temp = temp->next;
 		ft_printf("after while%i\n", chunkpos);
 	}
-	if (chunkpos-- == 1)
+	ft_printf("biggest:%i\n", biggest->content);
+	ft_printf("chunkpos%i\n", chunkpos);
+	if (chunkpos == 1)
+	{
 		pa(push_swap);
+	}
 	else if (chunkpos >= 2)
 	{
 		while(chunkpos > 2)
@@ -93,8 +102,9 @@ void sortchunk(t_push_swap	*push_swap)
 			rb(push_swap);
 			chunkpos--;
 		}
+		printing_stacks(push_swap);
 		sb(push_swap);
+		
 		pa(push_swap);
-		chunkpos--;
 	}
 }
