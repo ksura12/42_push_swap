@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/13 09:20:04 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:59:03 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 		input_errors(argv, push_swap);
 		
 		llist_filling(argv, push_swap);
-		printing_stacks(push_swap);
+		//printing_stacks(push_swap);
 		// rrr(push_swap);
 		// printing_stacks(push_swap);
 		// sa(push_swap);
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 		// pa(push_swap);
 		// printing_stacks(push_swap);
 		sorting(push_swap);
-		printing_stacks(push_swap);
+		//printing_stacks(push_swap);
 		freeing_llist(push_swap);
 		free(push_swap);
 		return (0);

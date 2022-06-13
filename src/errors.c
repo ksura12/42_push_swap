@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:26:43 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/08 19:06:13 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/13 13:36:57 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ static void	core_checkfordigit(char *argv, t_push_swap	*push_swap)
 			if (!ft_isdigit(argv[d + 1]))
 			{
 				push_swap->error = 1;
-				ft_printf("ERROR");
+				//ft_printf("ERROR");
+				write(2, "Error\n", 6);
 				exit(EXIT_FAILURE);
 			}
 			d++;
@@ -63,7 +64,7 @@ static void	core_checkfordigit(char *argv, t_push_swap	*push_swap)
 		else
 		{
 			push_swap->error = 1;
-			ft_printf("ERROR");
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -84,7 +85,8 @@ static void	checkfordubs(char **argv, t_push_swap	*push_swap)
 			if (ft_atoi(argv[c]) == ft_atoi(argv[j]))
 			{
 				push_swap->error = 2;
-				ft_printf("ERROR");
+				//
+				write(2, "Error\n", 6);
 				exit(EXIT_FAILURE);
 			}
 			else
@@ -104,7 +106,8 @@ static void	checkformaxandmin(char	**argv, t_push_swap	*push_swap)
 		if (atol(argv[c]) > INT_MAX || atol(argv[c]) < INT_MIN)
 		{
 			push_swap->error = 3;
-			ft_printf("ERROR");
+			//ft_printf("ERROR");
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 		c++;

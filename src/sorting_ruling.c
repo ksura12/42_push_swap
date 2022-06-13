@@ -6,7 +6,7 @@
 /*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 19:10:48 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/13 10:23:17 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/13 15:52:22 by ksura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ void	sorting(t_push_swap	*push_swap)
 	int	size;
 
 	size = ft_lstsize(push_swap->stack_a);
-	if (size == 1 || right_order_a(push_swap))
+	if (size == 1 || (right_order_a(push_swap) == 2))
 	{
-		ft_printf("\n");
-		exit(EXIT_SUCCESS);
+		//write(1, "\n", 1);
+		// exit(EXIT_SUCCESS);
+		return;
 	}
 	else if (size == 2)
 		two_args_a(push_swap);
@@ -67,20 +68,22 @@ void	two_args_a(t_push_swap	*push_swap)
 void	three_args_a(t_push_swap	*push_swap)
 {
 	t_list	*temp;
-
-	while (!right_order_a(push_swap))
-	{
-		temp = push_swap->stack_a;
-		if (temp->content > temp->next->content)
+	
+	temp = push_swap->stack_a;
+		while (right_order_a(push_swap) == 0)
 		{
-			if ((temp->content > ft_lstlast(temp)->content))
-				ra(push_swap);
+			temp = push_swap->stack_a;
+			if (temp->content > temp->next->content)
+			{
+				if ((temp->content > ft_lstlast(temp)->content))
+					ra(push_swap);
+				else
+					sa(push_swap);
+			}
 			else
-				sa(push_swap);
+				rra(push_swap);
 		}
-		else
-			rra(push_swap);
-	}
+	// push_swap->stack_b->chunk = 1;
 }
 
 // static void	three_args_b(t_push_swap	*push_swap)
@@ -107,26 +110,30 @@ void	four_args(t_push_swap	*push_swap)
 	pb_lowest(push_swap);
 	three_args_a(push_swap);
 	pa(push_swap);
+	//push_swap->stack_b->chunk = 1;
 }
 
 static int	right_order_a(t_push_swap	*push_swap)
 {
 	t_list	*temp;
-	t_list	*temp2;
 	int		ret;
 
 	ret = 0;
 	temp = push_swap->stack_a;
-	temp2 = push_swap->stack_a->next;
-	while (temp && temp2 && temp->content < temp2->content)
+	while (temp && temp->next && temp->content < temp->next->content)
 	{
-		temp = temp2;
-		temp2 = temp2->next;
+		temp = temp->next;
 	}
 	if (temp == ft_lstlast(push_swap->stack_a) && !push_swap->stack_b)
+	{
 		ret = 2;
+	}
+		
 	else if (temp == ft_lstlast(push_swap->stack_a))
+	{
 		ret = 1;
+	}
+		
 	else
 		ret = 0;
 	return (ret);
