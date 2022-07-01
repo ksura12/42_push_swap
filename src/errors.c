@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
+/*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:26:43 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/13 13:36:57 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/29 11:15:43 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	checkfordigit(char **argv, t_push_swap	*push_swap)
 		if (push_swap->error != 0)
 		{
 			ft_printf("ERROR");
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		c++;
 	}
@@ -53,9 +53,8 @@ static void	core_checkfordigit(char *argv, t_push_swap	*push_swap)
 			if (!ft_isdigit(argv[d + 1]))
 			{
 				push_swap->error = 1;
-				//ft_printf("ERROR");
 				write(2, "Error\n", 6);
-				exit(EXIT_FAILURE);
+				exit(0);
 			}
 			d++;
 		}
@@ -65,7 +64,7 @@ static void	core_checkfordigit(char *argv, t_push_swap	*push_swap)
 		{
 			push_swap->error = 1;
 			write(2, "Error\n", 6);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 	}
 }
@@ -85,9 +84,8 @@ static void	checkfordubs(char **argv, t_push_swap	*push_swap)
 			if (ft_atoi(argv[c]) == ft_atoi(argv[j]))
 			{
 				push_swap->error = 2;
-				//
 				write(2, "Error\n", 6);
-				exit(EXIT_FAILURE);
+				exit(0);
 			}
 			else
 				j++;
@@ -106,9 +104,8 @@ static void	checkformaxandmin(char	**argv, t_push_swap	*push_swap)
 		if (atol(argv[c]) > INT_MAX || atol(argv[c]) < INT_MIN)
 		{
 			push_swap->error = 3;
-			//ft_printf("ERROR");
 			write(2, "Error\n", 6);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		c++;
 	}

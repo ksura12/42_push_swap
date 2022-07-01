@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotating.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
+/*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:19:08 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/09 17:20:36 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/29 12:15:46 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ra(t_push_swap	*push_swap)
 {
-	t_list	*last;
-	t_list	*head_a;
+	t_stack	*last;
+	t_stack	*head_a;
 
-	last = ft_lstlast(push_swap->stack_a);
+	last = ft_stacklast(push_swap->stack_a);
 	head_a = push_swap->stack_a;
 	if (head_a == NULL || head_a->next == NULL)
 		return ;
@@ -29,10 +29,10 @@ void	ra(t_push_swap	*push_swap)
 
 void	rb(t_push_swap	*push_swap)
 {
-	t_list	*last;
-	t_list	*head_b;
+	t_stack	*last;
+	t_stack	*head_b;
 
-	last = ft_lstlast(push_swap->stack_b);
+	last = ft_stacklast(push_swap->stack_b);
 	head_b = push_swap->stack_b;
 	if (head_b == NULL || head_b->next == NULL)
 		return ;
@@ -44,16 +44,26 @@ void	rb(t_push_swap	*push_swap)
 
 void	rr(t_push_swap	*push_swap)
 {
-	t_list	*head_a;
-	t_list	*head_b;
+	t_stack	*head_a;
+	t_stack	*head_b;
+	t_stack *last_a;
+	t_stack *last_b;
 
 	head_a = push_swap->stack_a;
 	head_b = push_swap->stack_b;
-	if (!head_a || !head_a->next || !head_b || !head_b->next)
+	last_a = ft_stacklast(push_swap->stack_a);
+	last_b = ft_stacklast(push_swap->stack_b);
+	if (!head_a || !head_a->next || !head_b 
+	|| !head_b->next || !last_a || !last_b)
 		return ;
 	else
 	{
-		ra(push_swap);
-		rb(push_swap);
+		push_swap->stack_a = push_swap->stack_a->next;
+		head_a->next = NULL;
+		last_a->next = head_a;
+		push_swap->stack_b = push_swap->stack_b->next;
+		head_b->next = NULL;
+		last_b->next = head_b;
+		ft_printf("rr\n");
 	}
 }

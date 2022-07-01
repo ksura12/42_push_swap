@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
+/*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/10 16:51:41 by ksura            ###   ########.fr       */
+/*   Updated: 2022/07/01 11:23:30 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@
 
 # include "../libft/header/libftprintf.h"
 
+
 typedef struct s_push_swap
 {
 	int		error;
 	int		list_length;
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	// t_list	*stack_a;
+	// t_list	*stack_b;
 }	t_push_swap;
 
 typedef struct s_element
@@ -158,4 +161,46 @@ void		two_args_a(t_push_swap	*push_swap);
 *@return -
 */
 void		four_args(t_push_swap	*push_swap);
+
+/**
+ *@brief indexing stack a from 1-stacksize
+ *
+ *@param stack_a Head if llist stack a
+ *@return -
+ */
+void	find_index(t_stack *stack_a);
+
+/**
+ *@brief adding position identifieres to each node
+ *
+ *@param stack Head if llist stack
+ *@return -
+ */
+void	find_pos(t_stack *stack);
+
+/**
+ *@brief adding the target position (position of the node in stack a with the closest index) to each node
+ *
+ *@param push_swap struct containing heads of llists a and b
+ *@return -
+ */
+void	target_pos(t_push_swap *push_swap);
+
+/**
+ *@brief calculation the amount of movements needet to bring a node
+ 		up to the top on stack b
+ *
+ *@param push_swap struct containing heads of llists a and b
+ *@return -
+ */
+void	calc_cost_b(t_push_swap *push_swap);
+
+/**
+ *@brief calculation the amount of movements needet to bring a node 
+ 		up to the top on stack a
+ *
+ *@param push_swap struct containing heads of llists a and b
+ *@return -
+ */
+void	calc_cost_a(t_push_swap *push_swap);
 #endif

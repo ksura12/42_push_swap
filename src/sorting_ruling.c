@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_ruling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
+/*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 19:10:48 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/13 15:52:22 by ksura            ###   ########.fr       */
+/*   Updated: 2022/06/29 12:36:56 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sorting(t_push_swap	*push_swap)
 {
 	int	size;
 
-	size = ft_lstsize(push_swap->stack_a);
+	size = ft_stacksize(push_swap->stack_a);
 	if (size == 1 || (right_order_a(push_swap) == 2))
 	{
 		//write(1, "\n", 1);
@@ -45,10 +45,10 @@ void	sorting(t_push_swap	*push_swap)
 
 void	two_args_a(t_push_swap	*push_swap)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
 	temp = push_swap->stack_a;
-	if (temp->content > temp->next->content)
+	if (temp->value > temp->next->value)
 		sa(push_swap);
 	else
 		return ;
@@ -67,15 +67,15 @@ void	two_args_a(t_push_swap	*push_swap)
 
 void	three_args_a(t_push_swap	*push_swap)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	
 	temp = push_swap->stack_a;
 		while (right_order_a(push_swap) == 0)
 		{
 			temp = push_swap->stack_a;
-			if (temp->content > temp->next->content)
+			if (temp->value > temp->next->value)
 			{
-				if ((temp->content > ft_lstlast(temp)->content))
+				if ((temp->value > ft_stacklast(temp)->value))
 					ra(push_swap);
 				else
 					sa(push_swap);
@@ -115,21 +115,21 @@ void	four_args(t_push_swap	*push_swap)
 
 static int	right_order_a(t_push_swap	*push_swap)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	int		ret;
 
 	ret = 0;
 	temp = push_swap->stack_a;
-	while (temp && temp->next && temp->content < temp->next->content)
+	while (temp && temp->next && (temp->value < temp->next->value))
 	{
 		temp = temp->next;
 	}
-	if (temp == ft_lstlast(push_swap->stack_a) && !push_swap->stack_b)
+	if (temp == ft_stacklast(push_swap->stack_a) && !push_swap->stack_b)
 	{
 		ret = 2;
 	}
 		
-	else if (temp == ft_lstlast(push_swap->stack_a))
+	else if (temp == ft_stacklast(push_swap->stack_a))
 	{
 		ret = 1;
 	}
@@ -138,5 +138,3 @@ static int	right_order_a(t_push_swap	*push_swap)
 		ret = 0;
 	return (ret);
 }
-
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+        */
+/*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/13 16:59:03 by ksura            ###   ########.fr       */
+/*   Updated: 2022/07/01 11:25:34 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	init_push_swap(t_push_swap	*push_swap)
 
 void	freeing_llist(t_push_swap	*push_swap)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
 	while (push_swap->stack_a != NULL)
 	{
@@ -84,14 +84,14 @@ void	freeing_llist(t_push_swap	*push_swap)
 
 void	llist_filling(char	**argv, t_push_swap	*push_swap)
 {
-	t_list	*stack_node;
+	t_stack	*stack_node;
 	int		c;
 
 	c = 1;
 	while (argv[c])
 	{
-		stack_node = ft_lstnew(ft_atoi(argv[c]));
-		ft_lstadd_back(&push_swap->stack_a, stack_node);
+		stack_node = ft_stacknew(ft_atoi(argv[c]));
+		ft_stackadd_back(&push_swap->stack_a, stack_node);
 		c++;
 	}
 	push_swap->list_length = c;
@@ -99,8 +99,8 @@ void	llist_filling(char	**argv, t_push_swap	*push_swap)
 
 void	printing_stacks(t_push_swap	*push_swap)
 {
-	t_list	*a_stack;
-	t_list	*b_stack;
+	t_stack	*a_stack;
+	t_stack	*b_stack;
 	int		count;
 
 	a_stack = push_swap->stack_a;
@@ -110,20 +110,20 @@ void	printing_stacks(t_push_swap	*push_swap)
 	{
 		if (a_stack && b_stack)
 		{
-			ft_printf("Node %i:	 %d	%d\n", count, a_stack->content, b_stack->content);
+			ft_printf("Node %i:	 Value:%d	pos:%d	cost_a:%d	Value%d	pos:%d	tar_pos:%d	cost_b:%d\n", count, a_stack->value, a_stack->pos, a_stack->cost_a, b_stack->value, b_stack->pos, b_stack->tar_pos, b_stack->cost_b);
 			a_stack = a_stack->next;
 			b_stack = b_stack->next;
 			count++;
 		}
 		else if (!a_stack && b_stack)
 		{
-			ft_printf("Node %i:	 -	%d\n", count, b_stack->content);
+			ft_printf("Node %i:	 Value:-	pos:-	cost_a:-	Value%d	pos:%d	tar_pos:%d	cost_b:%d\n", b_stack->value, b_stack->pos, b_stack->tar_pos, b_stack->cost_b);
 			b_stack = b_stack->next;
 			count++;
 		}
 		else if (a_stack && !b_stack)
 		{
-			ft_printf("Node %i:	 %d	-\n", count, a_stack->content);
+			ft_printf("Node %i:	 Value:%d	pos:%d	cost_a:%d	Value:-	pos:-	tar_pos:-	cost_b:-\n", count, a_stack->value, a_stack->pos, a_stack->cost_a);
 			a_stack = a_stack->next;
 			count++;
 		}
