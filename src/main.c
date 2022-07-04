@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:12:17 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/04 12:24:38 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 15:39:10 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	{
 		push_swap = (t_push_swap *)malloc(sizeof(t_push_swap));
 		if (!push_swap)
-			exit(EXIT_FAILURE);
+			exit(1);
 		init_push_swap(push_swap);
 		input_errors(argv, push_swap);
 		
@@ -110,20 +110,20 @@ void	printing_stacks(t_push_swap	*push_swap)
 	{
 		if (a_stack && b_stack)
 		{
-			ft_printf("Node %i:	 Value:%d	pos:%d	cost_a:%d	Value:%d		pos:%d	tar_pos:%d	cost_a:%d	cost_b:%d\n", count, a_stack->value, a_stack->pos, a_stack->cost_a, b_stack->value, b_stack->pos, b_stack->tar_pos,b_stack->cost_a, b_stack->cost_b);
+			ft_printf("Node %i:	 Value:%d	pos:%d	index:%d	cost_a:%d	Value:%d		pos:%d	tar_pos:%d	cost_a:%d	cost_b:%d\n", count, a_stack->value, a_stack->pos, a_stack->index, a_stack->cost_a, b_stack->value, b_stack->pos, b_stack->tar_pos,b_stack->cost_a, b_stack->cost_b);
 			a_stack = a_stack->next;
 			b_stack = b_stack->next;
 			count++;
 		}
 		else if (!a_stack && b_stack)
 		{
-			ft_printf("Node %i:	 Value:-	pos:-	cost_a:-	Value:%d		pos:%d	tar_pos:%d	cost_a:%d	cost_b:%d\n", count, b_stack->value, b_stack->pos, b_stack->tar_pos, b_stack->cost_a, b_stack->cost_b);
+			ft_printf("Node %i:	 Value:-	pos:-	index:-	cost_a:-	Value:%d		pos:%d	tar_pos:%d	cost_a:%d	cost_b:%d\n", count, b_stack->value, b_stack->pos, b_stack->tar_pos, b_stack->cost_a, b_stack->cost_b);
 			b_stack = b_stack->next;
 			count++;
 		}
 		else if (a_stack && !b_stack)
 		{
-			ft_printf("Node %i:	 Value:%d	pos:%d	cost_a:%d	Value:-		pos:-	tar_pos:-	cost_a:-	cost_b:-\n", count, a_stack->value, a_stack->pos, a_stack->cost_a);
+			ft_printf("Node %i:	 Value:%d	pos:%d	index:%d	cost_a:%d	Value:-		pos:-	tar_pos:-	cost_a:-	cost_b:-\n", count, a_stack->value, a_stack->pos, a_stack->index, a_stack->cost_a);
 			a_stack = a_stack->next;
 			count++;
 		}

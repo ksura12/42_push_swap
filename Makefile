@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+         #
+#    By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 09:24:12 by ksura             #+#    #+#              #
-#    Updated: 2022/06/10 14:34:37 by ksura            ###   ########.fr        #
+#    Updated: 2022/07/04 17:24:42 by ksura@student.42 ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-CC = gcc
+CC = gcc -g
 CFLAGS := -Wall -Werror -Wextra
 LIBRARIES = $(FT_LNK) 
 INCLUDES = $(FT_INC)

@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:55:16 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/29 12:30:54 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 17:52:03 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,10 @@ void	rrr(t_push_swap	*push_swap)
 	t_stack *seclast_a;
 	t_stack *seclast_b;
 
-	last_a = ft_stacklast(push_swap->stack_a);
-	last_b = ft_stacklast(push_swap->stack_b);
+	// last_a = ft_stacklast(push_swap->stack_a);
+	// last_b = ft_stacklast(push_swap->stack_b);
+	last_a = push_swap->stack_a;
+	last_b = push_swap->stack_b;
 	seclast_a = NULL;
 	seclast_b = NULL;
 	if (!push_swap->stack_b || !push_swap->stack_b->next || !push_swap->stack_a 

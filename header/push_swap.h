@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/04 11:59:43 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 13:29:22 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,4 +236,12 @@ void best_move(t_push_swap *push_swap);
  *@return -
  */
 void	bringbback(t_push_swap *push_swap, t_stack *lowest_cost);
+
+/**
+ *@brief changes the orderof stack a, that the smalest number is on top
+ *
+ *@param push_swap struct which holds heads of stack_a & b
+ *@return -
+ */
+void	ordering_a(t_push_swap *push_swap);
 #endif

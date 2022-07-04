@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 14:21:46 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/04 13:12:55 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 15:08:47 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	sortbig(t_push_swap	*push_swap)
 		find_pos(push_swap->stack_b);
 		target_pos(push_swap);
 		calc_cost_b(push_swap);
-		printing_stacks(push_swap);
+		// printing_stacks(push_swap);
 	}
 	if (ft_stacksize(push_swap->stack_a) == 2)
 		two_args_a(push_swap);
@@ -74,8 +74,10 @@ void	sortbig(t_push_swap	*push_swap)
 		calc_cost_b(push_swap);
 		// printing_stacks(push_swap);
 		best_move(push_swap);
-		printing_stacks(push_swap);	
+		// printing_stacks(push_swap);	
 	}
+	ordering_a(push_swap);
+	// printing_stacks(push_swap);
 }
 
 void bringingbback(t_push_swap	*push_swap)
@@ -336,7 +338,7 @@ void	bringbback(t_push_swap	*push_swap, t_stack *lowest_cost)
 		}
 		temp_b = temp_b->next;
 	}
-	ft_printf("VALUE of lowest: %d\n", lowest_cost->value);
+	// ft_printf("VALUE of lowest: %d\n", lowest_cost->value);
 	bringbback(push_swap, lowest_cost);
 }
 
@@ -346,4 +348,31 @@ int	abs(int c)
 		return (c* -1);
 	else
 		return (c);
+}
+
+void	ordering_a(t_push_swap	*push_swap)
+{
+	int		count;
+	t_stack	*temp;
+	
+	count = 0;
+	temp = push_swap->stack_a;
+	while (temp && temp->index != 1)
+	{
+		count++;
+		temp = temp->next;
+	}
+	if (count > ft_stacksize(push_swap->stack_a) / 2)
+	{
+		while(count < (ft_stacksize(push_swap->stack_a)))
+		{
+			rra(push_swap);
+			count++;
+		}
+	}
+	else
+	{
+		while (count-- > 0)
+			ra(push_swap);
+	}
 }

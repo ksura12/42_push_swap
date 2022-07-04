@@ -6,13 +6,13 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:27:05 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/29 11:39:52 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 15:03:31 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-static void	swap(int	*a, int	*b);
+static void	swap(t_stack	*stack);
 
 void	sa(t_push_swap *push_swap)
 {
@@ -20,7 +20,7 @@ void	sa(t_push_swap *push_swap)
 
 	temp = push_swap->stack_a;
 	if (temp != NULL && temp->next != NULL)
-		swap(&temp->value, &temp->next->value);
+		swap(push_swap->stack_a);
 	ft_printf("sa\n");
 }
 
@@ -30,7 +30,7 @@ void	sb(t_push_swap *push_swap)
 
 	temp = push_swap->stack_b;
 	if (temp != NULL && temp->next != NULL)
-		swap(&temp->value, &temp->next->value);
+		swap(push_swap->stack_b);
 	ft_printf("sb\n");
 }
 
@@ -50,11 +50,15 @@ void	ss(t_push_swap *push_swap)
 		return ;
 }
 
-static void	swap(int	*a, int	*b)
+static void	swap(t_stack	*stack)
 {
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	int	index;
+	int	value;
+	
+	index = stack->index;
+	stack->index = stack->next->index;
+	stack->next->index = index;
+	value = stack->value;
+	stack->value = stack->next->value;
+	stack->next->value = value;
 }

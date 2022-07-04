@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:26:43 by ksura             #+#    #+#             */
-/*   Updated: 2022/06/29 11:15:43 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 18:03:39 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static void	checkfordigit(char **argv, t_push_swap	*push_swap)
 		core_checkfordigit(argv[c], push_swap);
 		if (push_swap->error != 0)
 		{
-			ft_printf("ERROR");
+			write(2, "Error\n", 6);
+			// ft_printf("ERROR");
 			exit(0);
 		}
 		c++;
