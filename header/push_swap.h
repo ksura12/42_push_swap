@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/01 11:23:30 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/04 11:59:43 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,12 +171,20 @@ void		four_args(t_push_swap	*push_swap);
 void	find_index(t_stack *stack_a);
 
 /**
+ *@brief indexing stack a from 1-stacksize for choosing pivot
+ *
+ *@param stack_a Head if llist stack a
+ *@return -
+ */
+void find_pindex(t_stack *stack_a);
+
+/**
  *@brief adding position identifieres to each node
  *
  *@param stack Head if llist stack
  *@return -
  */
-void	find_pos(t_stack *stack);
+void find_pos(t_stack *stack);
 
 /**
  *@brief adding the target position (position of the node in stack a with the closest index) to each node
@@ -203,4 +211,29 @@ void	calc_cost_b(t_push_swap *push_swap);
  *@return -
  */
 void	calc_cost_a(t_push_swap *push_swap);
+
+/**
+ *@brief building absolute value of the input int
+ *
+ *@param c	input integer
+ *@return absolute integer
+ */
+int	abs(int c);
+
+/**
+ *@brief finding node with lowest absolut moving consts, moves it and pushes
+ *
+ *@param push_swap struct which holds heads of stack_a & b
+ *@return -
+ */
+void best_move(t_push_swap *push_swap);
+
+/**
+ *@brief  moves node with lowest costs to top and pushes
+ *
+ *@param push_swap struct which hold heads of stack_a and b
+ *@param lowest_cost node which has lowest movement costs
+ *@return -
+ */
+void	bringbback(t_push_swap *push_swap, t_stack *lowest_cost);
 #endif
