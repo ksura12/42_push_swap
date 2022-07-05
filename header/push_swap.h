@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:13:31 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/04 13:29:22 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/05 10:20:53 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@
 
 # include "../libft/header/libftprintf.h"
 
-
 typedef struct s_push_swap
 {
 	int		error;
 	int		list_length;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	// t_list	*stack_a;
-	// t_list	*stack_b;
 }	t_push_swap;
 
 typedef struct s_element
@@ -34,14 +31,6 @@ typedef struct s_element
 	int		value;
 	int		position;
 }	t_element;
-
-/**
-*@brief inot existing function
-*
-*@param 
-*@return 
-*/
-int		*push_swap(int *stack_a);
 
 /**
 *@brief checks the arguments for non digits, max/mins and duplicates
@@ -124,18 +113,53 @@ void	rr(t_push_swap	*push_swap);
 */
 void	rra(t_push_swap	*push_swap);
 
+/**
+*@brief shifting last element of b to first position in stack b
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
 void	rrb(t_push_swap	*push_swap);
 
+/**
+*@brief shifting last element of stack a&b to first position in each stack
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
 void	rrr(t_push_swap	*push_swap);
 
+/**
+*@brief uses the fitting sorting fuction based on stacksize
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
 void	sorting(t_push_swap	*push_swap);
 
-void	three_args_a(t_push_swap	*push_swap);
-
+/**
+*@brief finds teh lowest value in stack a and pushes it to b
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
 void	pb_lowest(t_push_swap	*push_swap);
 
-void	five_args(t_push_swap	*push_swap);
+/**
+*@brief finds the pivot (middle value of stack a) and pushes every
+* node which is smaler to b, rotates if the node is bigger than pivot
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
 void	pivot_to_b(t_push_swap	*push_swap);
+
+/**
+*@brief prints the stackcontent with ft_printf()
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
 void	printing_stacks(t_push_swap	*push_swap);
 
 /**
@@ -152,7 +176,15 @@ void	sortbig(t_push_swap	*push_swap);
 *@param push_swap: struct which includes head of stack a&b
 *@return -
 */
-void		two_args_a(t_push_swap	*push_swap);
+void	two_args_a(t_push_swap	*push_swap);
+
+/**
+*@brief sorting exactly 3 Arguments
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	three_args_a(t_push_swap	*push_swap);
 
 /**
 *@brief sorting exactly 4 Arguments
@@ -160,7 +192,15 @@ void		two_args_a(t_push_swap	*push_swap);
 *@param push_swap: struct which includes head of stack a&b
 *@return -
 */
-void		four_args(t_push_swap	*push_swap);
+void	four_args(t_push_swap	*push_swap);
+
+/**
+*@brief sorting exactly 5 Arguments
+*
+*@param push_swap: struct which includes head of stack a&b
+*@return -
+*/
+void	five_args(t_push_swap	*push_swap);
 
 /**
  *@brief indexing stack a from 1-stacksize
@@ -176,7 +216,7 @@ void	find_index(t_stack *stack_a);
  *@param stack_a Head if llist stack a
  *@return -
  */
-void find_pindex(t_stack *stack_a);
+void	find_pindex(t_stack *stack_a);
 
 /**
  *@brief adding position identifieres to each node
@@ -184,10 +224,11 @@ void find_pindex(t_stack *stack_a);
  *@param stack Head if llist stack
  *@return -
  */
-void find_pos(t_stack *stack);
+void	find_pos(t_stack *stack);
 
 /**
- *@brief adding the target position (position of the node in stack a with the closest index) to each node
+ *@brief adding the target position (position of 
+ *the node in stack a with the closest index) to each node
  *
  *@param push_swap struct containing heads of llists a and b
  *@return -
@@ -218,7 +259,7 @@ void	calc_cost_a(t_push_swap *push_swap);
  *@param c	input integer
  *@return absolute integer
  */
-int	abs(int c);
+int		abs(int c);
 
 /**
  *@brief finding node with lowest absolut moving consts, moves it and pushes
@@ -226,7 +267,7 @@ int	abs(int c);
  *@param push_swap struct which holds heads of stack_a & b
  *@return -
  */
-void best_move(t_push_swap *push_swap);
+void	best_move(t_push_swap *push_swap);
 
 /**
  *@brief  moves node with lowest costs to top and pushes

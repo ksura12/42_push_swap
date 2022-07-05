@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:27:05 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/04 15:03:31 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/05 09:03:01 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	swap(t_stack	*stack)
 {
 	int	index;
 	int	value;
-	
+
 	index = stack->index;
 	stack->index = stack->next->index;
 	stack->next->index = index;

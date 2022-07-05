@@ -6,12 +6,12 @@
 #    By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 09:24:12 by ksura             #+#    #+#              #
-#    Updated: 2022/07/04 17:24:42 by ksura@student.42 ###   ########.fr        #
+#    Updated: 2022/07/05 10:01:24 by ksura@student.42 ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-CC = gcc -g
+CC = gcc
 CFLAGS := -Wall -Werror -Wextra
 LIBRARIES = $(FT_LNK) 
 INCLUDES = $(FT_INC)
@@ -27,7 +27,7 @@ FT_LNK	= ./libft/libftprintf.a
 
 
 SRC := main.c errors.c swapping.c pushing.c rotating.c revrotating.c\
-	sorting_ruling.c sortfive.c sortbig.c
+	sorting_ruling.c sortfive.c sortbig.c utils_sortbig.c utils2_sortbig.c
 
 OBJS = ${SRC:.c=.o}
 OBJECTS_PREF := $(addprefix $(OBJDIR), $(OBJS))
