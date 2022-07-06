@@ -6,7 +6,7 @@
 /*   By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:21:39 by ksura             #+#    #+#             */
-/*   Updated: 2022/07/05 12:30:35 by ksura@student.42 ###   ########.fr       */
+/*   Updated: 2022/07/05 10:24:26 by ksura@student.42 ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,81 +88,4 @@ void	ft_stackadd_front(t_stack **stk, t_stack *new);
 t_stack	*ft_stacklast(t_stack *stk);
 int		ft_stacksize(t_stack *stk);
 
-/**
-*@brief returns a line read from a file descriptor
-*
-*@param fd The file descriptor to read from
-*@return Read line: correct behavior
-*NULL: there is nothing else to read, or an error
-*occurred
-*/
-char	*get_next_line(int fd);
-
-/**
-*@brief allocates spave and wipes it
-*
-*@param count Number of Objects.
-*@param size Size of the objects.
-*@return Pointer to allocated memory
-* Null if error occurs
-*/
-char	*calloc_gnl(int count);
-
-/**
-*@brief locates first occurance of '\n'
-*
-*@param line string in which to search
-*@return Pointer to location of first occurance
-* Null if '\n' doesnt occure
-*/
-char	*strchr_gnl(const char *line);
-
-/**
-*@brief allocates and joins two strings
-*
-*@param s1 the prefix string
-*@param s2 the suffix string
-*@return the new string
-* Null if allocation fails
-*/
-char	*strjoin_gnl(char *s1, char *s2);
-
-/**
-*@brief gives the length of a string
-*
-*@param str1 the string to measure
-*@return number of characters of the string without NULL
-*/
-int		strlen_gnl(const char *str);
-
-/**
-*@brief saves the remainding characters in a string for next call
-*in a static variable
-*
-*@param rest remainding characters
-*@return Pointer to location of the remainding characters
-*/
-char	*save_rest(char	*rest);
-
-/**
-*@brief assembles the whole line of a file to return with gnl
-*
-*@param rest remainding characters
-*@return Pointer to location of teh line to return
-*/
-char	*line_output_gnl(char	*rest);
-
-/**
-*@brief reads from file into buffer, allocates and saves rest,
-*frees buffer
-*
-*@param fd file descriptor
-*@param rest remainding string
-*@return pointer to rest
-* Null if allocation fails
-*/
-char	*read_saverest_gnl(int fd, char	*rest);
-
 #endif
-
-# define BUFFER_SIZE 1

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+         #
+#    By: ksura <ksura@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/27 14:12:06 by ksura             #+#    #+#              #
-#    Updated: 2022/07/05 12:33:53 by ksura@student.42 ###   ########.fr        #
+#    Updated: 2022/06/07 14:21:57 by ksura            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ SRC :=	ft_strlen.c ft_atoi.c ft_isprint.c ft_isalpha.c ft_isdigit.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_strnstr.c ft_calloc.c \
 		ft_strdup.c ft_memcmp.c ft_strlcat.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c\
-		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c\
-		get_next_line_utils.c get_next_line.c
+		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
 
 OBJS = ${SRC:.c=.o}
 OBJECTS_PREF := $(addprefix $(OBJDIR), $(OBJS))
