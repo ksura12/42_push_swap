@@ -6,7 +6,7 @@
 #    By: ksura@student.42wolfsburg.de <ksura@studen +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 09:24:12 by ksura             #+#    #+#              #
-#    Updated: 2022/07/05 10:01:24 by ksura@student.42 ###   ########.fr        #
+#    Updated: 2022/07/06 12:07:47 by ksura@student.42 ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC := main.c errors.c swapping.c pushing.c rotating.c revrotating.c\
 OBJS = ${SRC:.c=.o}
 OBJECTS_PREF := $(addprefix $(OBJDIR), $(OBJS))
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re debug
 
 all: $(NAME)
 
@@ -57,5 +57,5 @@ fclean: clean
 
 re: fclean all
 
-debug: $(LIBFT) $(OBJECTS_PREF) $(OBJDIR)
+debug: $(LIBFT) bonus $(OBJECTS_PREF) $(OBJDIR)
 	$(CC) $(FLAGS) $(OBJECTS_PREF) $(LIBRARIES) -I$(HEADER) -o $(NAME) -g
